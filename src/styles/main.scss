@@ -1,0 +1,28 @@
+$navheight: 78px;
+$primary: #0040ff;
+$primary-dark: #000a29;
+$accent: #e5ff00;
+$text: #1a1a1a;
+$text-light: #555;
+$bg-light: #f7f8fc;
+$radius: 18px;
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
