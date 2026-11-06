@@ -53,7 +53,7 @@
             first."
           </blockquote>
           <p class="template-note">That's enough. We'll take it from there.</p>
-          <a href="mailto:inhellofo@myharf.com" class="btn-primary">Email hello@myharf.com</a>
+          <a href="mailto:hello@myharf.com" class="btn-primary">Email hello@myharf.com</a>
         </div>
 
         <div class="template-card">
@@ -106,7 +106,18 @@
         <h2 class="section-title">Send us your site. We'll take it from here.</h2>
         <p class="section-sub">Three fields. That's it.</p>
 
-        <form v-if="!submitted" class="contact-form" @submit.prevent="submitForm">
+        <form
+          v-if="!submitted"
+          class="contact-form"
+          name="leak-check"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          @submit.prevent="submitForm"
+        >
+          <p hidden>
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
           <div class="field">
             <label for="business">Business name</label>
             <input
@@ -168,16 +179,18 @@ const form = reactive({
   email: '',
 })
 
-function submitForm() {
-  // Replace with your actual backend / Formspree / Netlify Forms endpoint
-  // For now, simulate success
-  submitted.value = true
-  // Example with Formspree:
-  // await fetch('https://formspree.io/f/YOUR_ID', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify(form),
-  // })
+async function submitForm() {
+  const formData = new FormData(document.querySelector('.contact-form'))
+  try {
+    await fetch('/__forms.html', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+    submitted.value = true
+  } catch (error) {
+    alert('Something went wrong. Please email hello@myharf.com directly.')
+  }
 }
 </script>
 
