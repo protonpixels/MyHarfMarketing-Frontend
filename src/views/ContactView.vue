@@ -116,7 +116,7 @@
           <p hidden>
             <label
               >Don't fill this out:
-              <input name="access-key" value="fbd90412-8aa7-42a2-9c7a-392d2dc3046d"
+              <input type="hidden" name="access-key" value="fbd90412-8aa7-42a2-9c7a-392d2dc3046d"
             /></label>
           </p>
           <div class="field">
@@ -135,7 +135,7 @@
             <input
               id="url"
               v-model="form.url"
-              type="url"
+              type="text"
               name="url"
               required
               placeholder="https://yourbusiness.com"
