@@ -185,12 +185,14 @@ const form = reactive({
 
 async function submitForm() {
   const formData = new FormData(document.querySelector('.contact-form'))
+  formData.append('access_key', 'fbd90412-8aa7-42a2-9c7a-392d2dc3046d')
+  formData.append('subject', 'New Leak Check Request from MyHarf')
   try {
-    await fetch('https://api.web3forms.com/submit', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
+      body: formData,
     })
+    if (!res.ok) throw new Error()
     submitted.value = true
   } catch (error) {
     alert('Something went wrong. Please email hello@myharf.com directly.')
