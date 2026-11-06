@@ -111,18 +111,20 @@
           class="contact-form"
           name="leak-check"
           method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
           @submit.prevent="submitForm"
         >
           <p hidden>
-            <label>Don't fill this out: <input name="bot-field" /></label>
+            <label
+              >Don't fill this out:
+              <input name="access-key" value="fbd90412-8aa7-42a2-9c7a-392d2dc3046d"
+            /></label>
           </p>
           <div class="field">
             <label for="business">Business name</label>
             <input
               id="business"
               v-model="form.business"
+              name="business"
               type="text"
               required
               placeholder="e.g. ACR Construction"
@@ -134,6 +136,7 @@
               id="url"
               v-model="form.url"
               type="url"
+              name="url"
               required
               placeholder="https://yourbusiness.com"
             />
@@ -144,6 +147,7 @@
               id="email"
               v-model="form.email"
               type="email"
+              name="email"
               required
               placeholder="you@yourbusiness.com"
             />
@@ -182,7 +186,7 @@ const form = reactive({
 async function submitForm() {
   const formData = new FormData(document.querySelector('.contact-form'))
   try {
-    await fetch('/__forms.html', {
+    await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
