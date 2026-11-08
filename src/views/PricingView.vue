@@ -15,16 +15,17 @@
     <section class="plans">
       <div class="container plans-grid">
         <div class="plan">
-          <h3>Lead Leak Diagnosis</h3>
+          <h3>Free Leak Check</h3>
           <p class="price">$0</p>
           <p class="price-note">Free, one page, no obligation</p>
           <ul>
             <li>Mobile site review on a real phone</li>
             <li>Google Business Profile check</li>
             <li>Contact flow and form test</li>
+            <li>Response time + AI visibility check</li>
             <li>One-page summary with screenshots</li>
           </ul>
-          <router-link to="/#contact" class="plan-btn">Get the free leak check</router-link>
+          <router-link to="/contact" class="plan-btn">Get the free leak check</router-link>
         </div>
 
         <div class="plan featured">
@@ -37,9 +38,10 @@
             <li>Sync review widget with your Google profile</li>
             <li>Rewrite homepage and Google profile copy</li>
             <li>Add local keywords (Kingston, New Paltz, etc.)</li>
+            <li>1–2 town-level service pages or FAQ page</li>
             <li>Before-and-after screenshots on delivery</li>
           </ul>
-          <router-link to="/#contact" class="plan-btn primary">Start with a leak check</router-link>
+          <router-link to="/contact" class="plan-btn primary">Start with a leak check</router-link>
         </div>
 
         <div class="plan">
@@ -48,11 +50,12 @@
           <p class="price-note">No long-term commitment</p>
           <ul>
             <li>Monthly call and form report</li>
+            <li>AI visibility check (do you appear?)</li>
             <li>Google profile posts and photo updates</li>
             <li>Review request reminders</li>
             <li>Fix small issues as they come up</li>
           </ul>
-          <router-link to="/#contact" class="plan-btn">Ask about monthly</router-link>
+          <router-link to="/contact" class="plan-btn">Ask about monthly</router-link>
         </div>
       </div>
     </section>
@@ -62,7 +65,7 @@
         <h2 class="section-title">Common questions</h2>
         <div class="faq-list">
           <div class="faq-item">
-            <h3>Why is the diagnosis free?</h3>
+            <h3>Why is the leak check free?</h3>
             <p>
               Because most contractors have been pitched "a new website" before and don't trust it.
               We'd rather show you the specific problems first. If it's not worth fixing, we'll tell
@@ -73,7 +76,7 @@
             <h3>What if my site is built on Wix or Squarespace?</h3>
             <p>
               We can still fix most mobile and copy issues within the platform's editor. If the
-              platform is too restrictive, we'll say so during the diagnosis.
+              platform is too restrictive, we'll say so during the leak check.
             </p>
           </div>
           <div class="faq-item">
@@ -86,8 +89,8 @@
           <div class="faq-item">
             <h3>How do I know it's working?</h3>
             <p>
-              You get a simple monthly report: calls, form submissions, Google profile views. No
-              jargon, no vanity metrics.
+              You get a simple monthly report: calls, form submissions, and whether you showed up
+              when we asked ChatGPT for a local recommendation. No jargon, no vanity metrics.
             </p>
           </div>
         </div>
@@ -105,7 +108,6 @@
 </template>
 
 <script setup></script>
-
 <style lang="scss" scoped>
 .pricing {
   padding-top: $navheight;

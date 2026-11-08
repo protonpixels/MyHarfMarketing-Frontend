@@ -13,7 +13,7 @@
             runaround.
           </p>
           <div class="hero-actions">
-            <router-link to="/#contact" class="btn-primary">Get a free leak check</router-link>
+            <router-link to="/contact" class="btn-primary">Get a free leak check</router-link>
             <router-link to="/how-it-works" class="btn-ghost">See how it works</router-link>
           </div>
           <p class="hero-note">
@@ -64,6 +64,14 @@
       <div class="container">
         <h2 class="section-title">Pick where to start.</h2>
         <div class="route-grid">
+          <router-link to="/services" class="route-card">
+            <h3>Services</h3>
+            <p>
+              What we actually do—and what we don't. Free leak check, fixed-price fix, optional
+              monthly.
+            </p>
+            <span class="route-link">See services →</span>
+          </router-link>
           <router-link to="/how-it-works" class="route-card">
             <h3>How it works</h3>
             <p>Three steps: free leak check, fix the leaks, optional monthly check-in.</p>
@@ -74,17 +82,12 @@
             <p>Anchored to one job's profit. Free check, fixed-price fix, optional monthly.</p>
             <span class="route-link">See pricing →</span>
           </router-link>
-          <router-link to="/about" class="route-card">
-            <h3>About</h3>
-            <p>One person: engineer + copywriter. Local to New Paltz, serving the Hudson Valley.</p>
-            <span class="route-link">Meet MyHarf →</span>
-          </router-link>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact reveal">
+    <!-- CONTACT STRIP -->
+    <section class="contact reveal">
       <div class="container contact-inner">
         <h2 class="section-title">Get a free leak check</h2>
         <p class="section-sub">
@@ -92,8 +95,8 @@
           first. No charge, no obligation.
         </p>
         <div class="contact-actions">
-          <a href="tel:+13292317369" class="btn-primary">Call +1 (329) 231-7369</a>
-          <a href="mailto:hello@myharf.com" class="btn-ghost">Email hello@myharf.com</a>
+          <router-link to="/contact" class="btn-primary">Start the free leak check</router-link>
+          <a href="tel:+13292317369" class="btn-ghost">Call +1 (329) 231-7369</a>
         </div>
       </div>
     </section>

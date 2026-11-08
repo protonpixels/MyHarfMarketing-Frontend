@@ -12,6 +12,7 @@
       <div class="nav-links">
         <router-link to="/how-it-works">How it works</router-link>
         <router-link to="/pricing">Pricing</router-link>
+        <router-link to="/services">Services</router-link>
         <router-link to="/about">About</router-link>
         <router-link to="/contact" class="nav-cta">Get a free leakage scan</router-link>
       </div>
@@ -24,6 +25,7 @@
     <div v-if="menuOpen" class="mobile-menu">
       <router-link to="/how-it-works" @click="menuOpen = false">How it works</router-link>
       <router-link to="/pricing" @click="menuOpen = false">Pricing</router-link>
+      <router-link to="/services" @click="menuOpen = false">Services</router-link>
       <router-link to="/about" @click="menuOpen = false">About</router-link>
       <router-link to="/contact" class="mobile-cta" @click="menuOpen = false"
         >Get a free leakage scan</router-link

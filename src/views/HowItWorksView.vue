@@ -3,7 +3,7 @@
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">How it works</p>
-        <h1 class="headline">Scan first. Fix the leak. Show the numbers.</h1>
+        <h1 class="headline">Leak check first. Fix the leak. Show the numbers.</h1>
         <p class="subhead">
           No long proposal, no retainer before we've found anything. Three steps, and you can stop
           after the first one if it's not a fit.
@@ -13,10 +13,10 @@
 
     <section class="steps">
       <div class="container">
-        <div class="step">
+        <div class="step reveal">
           <div class="step-marker">01</div>
           <div class="step-body">
-            <h2>Free diagnosis (30–60 minutes of my time)</h2>
+            <h2>Free leak check (30–60 minutes of my time)</h2>
             <p>
               Send me your website URL. I open it on a real phone—not a narrow desktop window—and
               check three things: whether the page scrolls sideways or feels broken on mobile,
@@ -24,13 +24,15 @@
               contact form and phone number actually work.
             </p>
             <p>
-              You get a one-page summary with screenshots, ranked by what's costing you the most
-              calls. No charge. If nothing is broken, I'll tell you that too.
+              I also fill out your form once to see how fast you reply, and ask ChatGPT for a local
+              recommendation to see if you appear. You get a one-page summary with screenshots,
+              ranked by what's costing you the most calls. No charge. If nothing is broken, I'll
+              tell you that too.
             </p>
           </div>
         </div>
 
-        <div class="step">
+        <div class="step reveal">
           <div class="step-marker">02</div>
           <div class="step-body">
             <h2>Fix the leaks (1–2 weeks)</h2>
@@ -42,20 +44,22 @@
               NY").
             </p>
             <p>
-              When I'm done, you get before-and-after screenshots. You can check it on your own
-              phone.
+              When it makes sense, I also add one or two town-level service pages or an FAQ page so
+              Google and AI search can find you. When I'm done, you get before-and-after
+              screenshots. You can check it on your own phone.
             </p>
           </div>
         </div>
 
-        <div class="step">
+        <div class="step reveal">
           <div class="step-marker">03</div>
           <div class="step-body">
             <h2>Monthly check-in (optional)</h2>
             <p>
               If you want me to keep it working, I check the site and Google profile once a month,
               update photos, respond to review reminders, and send you a simple report: how many
-              calls and form submissions came in. No jargon, no vanity metrics.
+              calls and form submissions came in, and whether you showed up when I asked ChatGPT for
+              a local recommendation. No jargon, no vanity metrics.
             </p>
             <p>
               No long-term contract. Cancel anytime. The point is to show you whether it's
@@ -66,12 +70,12 @@
       </div>
     </section>
 
-    <section class="what-you-get">
+    <section class="what-you-get reveal">
       <div class="container">
         <h2 class="section-title">What you actually get</h2>
         <div class="get-grid">
           <div class="get-card">
-            <h3>A one-page diagnosis</h3>
+            <h3>A one-page leak check</h3>
             <p>
               Three problems, ranked by how many calls they're likely costing you, with screenshots.
             </p>
@@ -89,7 +93,7 @@
           </div>
           <div class="get-card">
             <h3>A simple monthly report</h3>
-            <p>Calls, form submissions, Google profile views. One page, plain language.</p>
+            <p>Calls, form submissions, and AI visibility. One page, plain language.</p>
           </div>
         </div>
       </div>
@@ -108,7 +112,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useReveal } from '@/composables/useReveal'
+useReveal()
+</script>
 
 <style lang="scss" scoped>
 .how-page {

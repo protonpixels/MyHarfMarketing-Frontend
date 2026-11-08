@@ -18,6 +18,7 @@
         <h4>Pages</h4>
         <router-link to="/how-it-works">How it works</router-link>
         <router-link to="/pricing">Pricing</router-link>
+        <router-link to="/services">Services</router-link>
         <router-link to="/about">About</router-link>
       </div>
 
@@ -35,7 +36,7 @@
 
     <div class="container footer-bottom">
       <p>© {{ year }} MyHarf. All rights reserved.</p>
-      <router-link to="/#contact">Get a free leak check →</router-link>
+      <router-link to="/contact">Get a free leak check →</router-link>
     </div>
   </footer>
 </template>

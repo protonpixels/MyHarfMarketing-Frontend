@@ -113,12 +113,13 @@
           method="POST"
           @submit.prevent="submitForm"
         >
-          <p hidden>
+          <!-- Honeypot: real bots fill this; humans never see it -->
+          <p class="honeypot" aria-hidden="true">
             <label
-              >Don't fill this out:
-              <input type="hidden" name="access-key" value="fbd90412-8aa7-42a2-9c7a-392d2dc3046d"
+              >Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"
             /></label>
           </p>
+
           <div class="field">
             <label for="business">Business name</label>
             <input
@@ -135,8 +136,8 @@
             <input
               id="url"
               v-model="form.url"
-              type="text"
               name="url"
+              type="text"
               required
               placeholder="https://yourbusiness.com"
             />
@@ -146,8 +147,8 @@
             <input
               id="email"
               v-model="form.email"
-              type="email"
               name="email"
+              type="email"
               required
               placeholder="you@yourbusiness.com"
             />
@@ -176,6 +177,8 @@ import { reactive, ref } from 'vue'
 import { useReveal } from '@/composables/useReveal'
 useReveal()
 
+const ACCESS_KEY = 'fbd90412-8aa7-42a2-9c7a-392d2dc3046d'
+
 const submitted = ref(false)
 const form = reactive({
   business: '',
@@ -185,8 +188,9 @@ const form = reactive({
 
 async function submitForm() {
   const formData = new FormData(document.querySelector('.contact-form'))
-  formData.append('access_key', 'fbd90412-8aa7-42a2-9c7a-392d2dc3046d')
+  formData.append('access_key', ACCESS_KEY)
   formData.append('subject', 'New Leak Check Request from MyHarf')
+
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -204,7 +208,13 @@ async function submitForm() {
 .contact-page {
   padding-top: $navheight;
 }
-
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .page-hero {
   padding: 80px 0 40px;
   background: linear-gradient(180deg, $bg-light 0%, #fff 100%);
