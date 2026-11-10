@@ -107,8 +107,8 @@
           </p>
         </div>
         <div class="monthly-card">
-          <p class="monthly-label">Monthly check-in</p>
-          <p class="monthly-price">$150–$300<span>/mo</span></p>
+          <p class="monthly-label">Growth Monitor options</p>
+          <p class="monthly-price">$149–$299<span>/mo</span></p>
           <ul>
             <li>Form and phone test</li>
             <li>Google profile post + photo update</li>

@@ -1,6 +1,9 @@
 <template>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <NavBar />
-  <router-view />
+  <main id="main-content">
+    <router-view />
+  </main>
   <Footer />
 </template>
 
@@ -10,53 +13,9 @@ import Footer from './components/Footer.vue'
 </script>
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.skip-link {
+  position: fixed; z-index: 2000; top: 10px; left: 10px; padding: 10px 14px;
+  color: #fff; background: #173b4b; border-radius: 8px; transform: translateY(-150%);
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family:
-    'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
-  color: $text;
-  background: #fff;
-  max-width: 100vw;
-  min-height: 100vh;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-#app {
-  max-width: 100vw;
-  min-height: 100vh;
-}
-
-a,
-a:hover,
-a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
-img,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-.container {
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 24px;
-}
+.skip-link:focus { transform: translateY(0); }
 </style>
