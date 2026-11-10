@@ -103,7 +103,6 @@
 
 <style lang="scss" scoped>
 .about {
-  padding-top: $navheight;
 }
 
 .page-hero {
