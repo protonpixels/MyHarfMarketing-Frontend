@@ -1,42 +1,44 @@
 <template>
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div class="brand">
-          <img src="@/assets/logo.png" alt="MyHarf logo" class="logo" />
-          <div>
-            <p class="name">MyHarf</p>
-            <p class="slogan">More calls. Less guesswork.</p>
-          </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <router-link to="/" class="brand" aria-label="MyHarf home">
+            <img src="@/assets/logo.png" alt="" />
+            <span><strong>MyHarf</strong><small>More calls. Less guesswork.</small></span>
+          </router-link>
+          <p>Practical website, conversion, and local visibility improvements for independent contractors across the Hudson Valley.</p>
+          <router-link to="/contact" class="footer-cta">Start with a free leak check <span aria-hidden="true">↗</span></router-link>
         </div>
-        <p class="blurb">
-          Website fixes, copy, and local SEO for Hudson Valley contractors. Based in New Paltz.
-        </p>
+
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <router-link to="/services">What we fix</router-link>
+          <router-link to="/how-it-works">How it works</router-link>
+          <router-link to="/pricing">Pricing</router-link>
+          <router-link to="/about">About MyHarf</router-link>
+        </div>
+
+        <div class="footer-column">
+          <h2>Service area</h2>
+          <router-link to="/locations/kingston-ny">Kingston</router-link>
+          <router-link to="/locations/new-paltz-ny">New Paltz</router-link>
+          <router-link to="/locations/poughkeepsie-ny">Poughkeepsie</router-link>
+          <span>Hudson Valley, New York</span>
+        </div>
+
+        <div class="footer-column">
+          <h2>Get in touch</h2>
+          <a href="mailto:hello@myharf.com">hello@myharf.com</a>
+          <a href="tel:+13292317369">+1 (329) 231-7369</a>
+          <span>Start with a no-obligation website review.</span>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h4>Pages</h4>
-        <router-link to="/how-it-works">How it works</router-link>
-        <router-link to="/pricing">Pricing</router-link>
-        <router-link to="/services">Services</router-link>
-        <router-link to="/about">About</router-link>
+      <div class="footer-bottom">
+        <p>© {{ year }} MyHarf. All rights reserved.</p>
+        <p>Built for local businesses. Based in the Hudson Valley.</p>
       </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="tel:+13292317369">+1 (329) 231-7369</a>
-        <a href="mailto:info@myharf.com">hello@myharf.com</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Service area</h4>
-        <p>New Paltz · Kingston · Poughkeepsie · Newburgh · Hudson Valley</p>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <p>© {{ year }} MyHarf. All rights reserved.</p>
-      <router-link to="/contact">Get a free leak check →</router-link>
     </div>
   </footer>
 </template>
@@ -46,102 +48,21 @@ const year = new Date().getFullYear()
 </script>
 
 <style lang="scss" scoped>
-.footer {
-  background: #0b1220;
-  color: #cfd6e6;
-  padding: 60px 0 24px;
-  margin-top: 0;
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-    gap: 32px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-    @media (max-width: 860px) {
-      grid-template-columns: 1fr 1fr;
-    }
-    @media (max-width: 520px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-
-    .logo {
-      max-height: 36px;
-    }
-    .name {
-      font-size: 18px;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.2;
-    }
-    .slogan {
-      font-size: 12px;
-      color: #9aa6bd;
-    }
-  }
-
-  .blurb {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #9aa6bd;
-    max-width: 320px;
-  }
-
-  .footer-col {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    h4 {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-
-    a,
-    p {
-      font-size: 14px;
-      color: #cfd6e6;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #fff;
-    }
-  }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    font-size: 13px;
-    color: #8b96ab;
-
-    a {
-      color: #cfd6e6;
-
-      &:hover {
-        color: #fff;
-      }
-    }
-
-    @media (max-width: 640px) {
-      flex-direction: column;
-      gap: 8px;
-      text-align: center;
-    }
-  }
-}
+.site-footer { padding: 68px 0 22px; color: #d9e3e6; background: #102c39; }
+.footer-main { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.1fr; gap: 44px; padding-bottom: 48px; }
+.brand { display: inline-flex; align-items: center; gap: 11px; margin-bottom: 18px; }
+.brand img { width: 40px; height: 40px; object-fit: contain; }
+.brand span { display: grid; line-height: 1.2; }
+.brand strong { color: #fff; font-size: 1.25rem; }
+.brand small { margin-top: 4px; color: #a9bdc4; font-size: .7rem; }
+.footer-brand > p { max-width: 340px; margin: 0 0 22px; color: #b7c8cd; font-size: .92rem; }
+.footer-cta { display: inline-flex; gap: 10px; color: #fff; font-size: .9rem; font-weight: 750; }
+.footer-cta:hover, .footer-column a:hover { color: #f2b17e; }
+.footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.footer-column h2 { margin: 4px 0 9px; color: #fff; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; }
+.footer-column a, .footer-column span { color: #b7c8cd; font-size: .9rem; line-height: 1.5; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 18px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.13); }
+.footer-bottom p { margin: 0; color: #91aab2; font-size: .78rem; }
+@media (max-width: 850px) { .footer-main { grid-template-columns: 1.5fr 1fr; gap: 34px; } }
+@media (max-width: 560px) { .footer-main { grid-template-columns: 1fr 1fr; gap: 30px 18px; } .footer-brand { grid-column: 1 / -1; } .footer-bottom { flex-direction: column; gap: 6px; } }
 </style>
