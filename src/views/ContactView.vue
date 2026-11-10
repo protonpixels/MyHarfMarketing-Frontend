@@ -206,7 +206,6 @@ async function submitForm() {
 
 <style lang="scss" scoped>
 .contact-page {
-  padding-top: $navheight;
 }
 .honeypot {
   position: absolute;

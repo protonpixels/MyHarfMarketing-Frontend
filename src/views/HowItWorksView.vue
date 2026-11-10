@@ -119,7 +119,6 @@ useReveal()
 
 <style lang="scss" scoped>
 .how-page {
-  padding-top: $navheight;
 }
 
 .page-hero {

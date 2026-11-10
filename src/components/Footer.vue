@@ -51,7 +51,7 @@ const year = new Date().getFullYear()
 .site-footer { padding: 68px 0 22px; color: #d9e3e6; background: #102c39; }
 .footer-main { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.1fr; gap: 44px; padding-bottom: 48px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; margin-bottom: 18px; }
-.brand img { width: 40px; height: 40px; object-fit: contain; }
+.brand img { width: 40px; height: 40px; object-fit: contain; filter: brightness(0) invert(1); }
 .brand span { display: grid; line-height: 1.2; }
 .brand strong { color: #fff; font-size: 1.25rem; }
 .brand small { margin-top: 4px; color: #a9bdc4; font-size: .7rem; }
